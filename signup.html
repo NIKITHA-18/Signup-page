@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up | By Code Info</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  
+     <script>
+          
+            function checkPass()
+{
+    var pass1 = document.getElementById('pass1');
+    var pass2 = document.getElementById('pass2');
+    var message = document.getElementById('error-nwl');
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+
+    if(pass1.value == pass2.value){
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "ok!"
+    }
+    else{
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = " These passwords don't match"
+    }
+	
+    if(pass1.length > 5){
+        pass1.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "character number ok!"
+    }
+    else{
+        pass1.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = " you have to enter at least 6 digit!"
+    }
+}  
+        </script>
+      </head>
+  <body>
+    <div class="signup-box">
+      <h1><b>Sign Up</b></h1>
+        
+      <form>
+          <br>
+        <input type="text" name="fname" placeholder="First Name" size="30"required>
+          <br>
+        <input type="text" name="fname" placeholder="Last name" size="30" required> <br>
+        <br>
+        <input type="email" name="email" placeholder="Please enter your mail" size="50" required> <br>
+        <br>
+          <form onSumbit="return checkPassword(this)">
+            <input name="password" type="password" placeholder="password"  id="pass1"/> <br><br>  
+  
+            <input name="repeatpassword" type="password" placeholder="confirm password" id="pass2" onkeyup="checkPass(); return false;" />
+             <br><br>  
+  
+<button type = "submit">Submit</button>   
+<button type = "reset" value = "Reset" >Reset</button>  
+      </form>
+          </form>
+      <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+       
+    <p class="para-2">
+      Already have an account? <a href="login.html">Login here</a>
+    </p>
+        
+  </body>
+</html>
